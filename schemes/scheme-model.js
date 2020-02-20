@@ -24,6 +24,7 @@ function findSteps(id) {
     return db('schemes')
     .join('steps', 'steps.scheme_id', 'schemes.id')
     .where({scheme_id:id})
+    .orderBy('steps.step_number', 'asc')
 }
 
 function add(scheme) {
@@ -45,5 +46,5 @@ function remove(id) {
 
 function addStep(step, id){
     return db('schemes')
-    
+
 }
